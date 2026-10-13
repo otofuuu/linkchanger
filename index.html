@@ -5,25 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ffffff">
   <title>Zeta アプリ直行リンクメーカー</title>
-  <meta name="description" content="Zetaの共有URLから、アプリで開くためのリンクを作成します。">
+  <meta name="description" content="Zetaの共有URLから、アプリでプロット紹介画面を直接開くリンクを作成します。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="wrap">
     <section class="card">
       <header class="hero">
-        <div>
-          <p class="eyebrow">Zeta link helper</p>
-          <h1>Zeta アプリ直行リンクメーカー</h1>
-          <p class="lead">Zetaのプロット共有URLを貼ると、アプリで紹介画面やトークを直接開くためのリンクを作成します。</p>
-        </div>
+        <p class="eyebrow">Zeta link helper</p>
+        <h1>Zeta アプリ直行リンクメーカー</h1>
+        <p class="lead">Zetaのプロット共有URLを貼ると、アプリでプロット紹介画面を直接開くリンクを作成します。</p>
       </header>
 
       <section class="input-area" aria-labelledby="input-title">
         <h2 id="input-title">共有URL</h2>
         <label class="sr-only" for="sourceUrl">Zetaのプロット共有URL</label>
-        <textarea id="sourceUrl" rows="4" inputmode="url" autocapitalize="off" autocomplete="off" spellcheck="false"
-          placeholder="https://zeta-ai.io/ja/plots/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/profile?share_id=..."></textarea>
+        <textarea id="sourceUrl" rows="4" inputmode="url" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="https://zeta-ai.io/ja/plots/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/profile?share_id=..."></textarea>
         <div class="input-actions">
           <button id="pasteBtn" class="button secondary" type="button">貼り付け</button>
           <button id="clearBtn" class="button ghost" type="button">クリア</button>
@@ -38,46 +35,24 @@
         </div>
 
         <div class="result-block featured">
-          <div class="result-label">iOS：プロット紹介画面</div>
+          <div class="result-label">iOS用リンク</div>
           <div class="link-box">
             <input id="iosProfileLink" readonly aria-label="iOS用プロット紹介リンク">
             <button id="copyIosProfileBtn" class="icon-button" type="button">コピー</button>
           </div>
           <div class="button-row">
-            <a id="openIosProfileBtn" class="button primary" href="#" rel="noopener">プロット紹介を開く</a>
-          </div>
-        </div>
-
-        <div class="result-block">
-          <div class="result-label">iOS：トーク画面</div>
-          <div class="link-box">
-            <input id="iosTalkLink" readonly aria-label="iOS用トーク直行リンク">
-            <button id="copyIosTalkBtn" class="icon-button" type="button">コピー</button>
-          </div>
-          <div class="button-row">
-            <a id="openIosTalkBtn" class="button secondary full" href="#" rel="noopener">トークを開く</a>
+            <a id="openIosProfileBtn" class="button primary" href="#" rel="noopener">Zetaアプリで開く</a>
           </div>
         </div>
 
         <div class="result-block android">
           <div class="result-label-row">
-            <div class="result-label">Android：プロット紹介画面</div>
+            <div class="result-label">Android用リンク</div>
             <span class="badge warn">未検証</span>
           </div>
           <div class="link-box">
             <input id="androidProfileLink" readonly aria-label="Android用プロット紹介リンク">
             <button id="copyAndroidProfileBtn" class="icon-button" type="button">コピー</button>
-          </div>
-        </div>
-
-        <div class="result-block android">
-          <div class="result-label-row">
-            <div class="result-label">Android：トーク画面</div>
-            <span class="badge warn">未検証</span>
-          </div>
-          <div class="link-box">
-            <input id="androidTalkLink" readonly aria-label="Android用トーク直行リンク">
-            <button id="copyAndroidTalkBtn" class="icon-button" type="button">コピー</button>
           </div>
           <p class="note">Android用リンクは実機での動作確認をしていません。</p>
         </div>
@@ -92,18 +67,13 @@
         <h2>使い方</h2>
         <ol>
           <li>Zetaのプロット共有URLを貼る</li>
-          <li>自動で直行リンクに変換</li>
-          <li>紹介用なら「プロット紹介」、すぐ遊ぶなら「トーク」をコピー</li>
+          <li>自動でアプリ用リンクに変換</li>
+          <li>リンクをコピーしてXなどで共有</li>
         </ol>
-        <p class="note">
-          ※非公式のWebアプリのため、予告なく削除（公開停止）、<br>
-           仕様変更により使えなくなる場合があります。<br><br>
-          
-          現在はzetaの「プロット」URL専用です。iOS版での動作確認済みです。</p>
+        <p class="note">現在はZetaの「プロット」URL専用です。iOS版は実機で動作確認済みです。</p>
       </section>
     </section>
   </main>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
